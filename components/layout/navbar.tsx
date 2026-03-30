@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/servicos", label: "Serviços" },
+  { href: "/processo", label: "Processo" },
   { href: "/sobre", label: "Sobre" },
 ];
 
@@ -34,7 +35,7 @@ export function Navbar() {
 
   const whatsappNumber = "5581999062175";
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Oi! Quero solicitar um orçamento."
+    "Solicitar orçamento"
   )}`;
 
   return (
@@ -51,7 +52,7 @@ export function Navbar() {
           className="text-xl font-bold tracking-tight text-brand-white z-50"
           onClick={() => setIsOpen(false)}
         >
-          devn<span className="text-brand-accent">.</span>ando
+          Nexus Digital
         </Link>
 
         {/* Desktop Navigation */}

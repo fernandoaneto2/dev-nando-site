@@ -4,7 +4,7 @@ const whatsappNumber = "5581999062175";
 
 export function WhatsAppFloating() {
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Oi! Quero falar sobre meu site/projeto."
+    "Solicitar orçamento"
   )}`;
 
   return (

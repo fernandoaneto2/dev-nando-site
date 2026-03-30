@@ -12,15 +12,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "devn.ando | Desenvolvedor Fullstack e Analista de Inovacao",
+  title: "Nexus Digital · Estúdio Digital Independente",
   description:
-    "Transformamos ideias em produtos digitais de alta performance com desenvolvimento web e estrategia para sites.",
+    "Desenvolvemos sites que posicionam marcas, atraem clientes qualificados e geram resultado real. Estúdio boutique especializado em landing pages e sites institucionais.",
   keywords: [
     "desenvolvedor fullstack",
-    "analista de inovacao",
+    "analista de inovação",
     "sites institucionais",
     "landing pages",
-    "portfolio profissional",
+    "portfólio profissional",
   ],
 };
 

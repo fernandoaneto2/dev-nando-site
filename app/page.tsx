@@ -8,8 +8,17 @@ import {
   SearchX,
   Sparkles,
   Target,
+  Star,
+  Layers,
 } from "lucide-react";
 import { ServiceCard } from "@/components/ui/service-card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nexus Digital · Estúdio Digital Independente",
+  description:
+    "Desenvolvemos sites que posicionam marcas, atraem clientes qualificados e geram resultado real. Estúdio boutique especializado em landing pages e sites institucionais.",
+};
 
 const serviceHighlights = [
   {
@@ -57,6 +66,27 @@ const clientPains = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Carlos Mendes",
+    role: "Diretor Comercial · Mendes & Associados",
+    text: "Entregaram exatamente o que prometeram, no prazo combinado. O site novo triplicou o número de contatos qualificados em dois meses.",
+    initials: "CM",
+  },
+  {
+    name: "Juliana Farias",
+    role: "Fundadora · Studio JF",
+    text: "Finalmente um desenvolvedor que entende de negócio. Não precisei explicar o óbvio — eles já chegaram com as perguntas certas.",
+    initials: "JF",
+  },
+  {
+    name: "Rafael Torres",
+    role: "CEO · Torres Soluções",
+    text: "Processo claro, comunicação direta e entrega impecável. Recomendo sem hesitar para qualquer empresa que leve o digital a sério.",
+    initials: "RT",
+  },
+];
+
 const portfolioProjects = [
   {
     name: "Sistema de Gestão Social",
@@ -84,10 +114,37 @@ const portfolioProjects = [
   },
 ];
 
+const faq = [
+  {
+    question: "Quanto tempo leva para ficar pronto?",
+    answer: "Landing pages ficam prontas em até 7 dias úteis. Sites institucionais em até 15 dias úteis. O prazo começa a contar após aprovação do briefing."
+  },
+  {
+    question: "Como funciona o processo?",
+    answer: "Você nos conta o que precisa, apresentamos uma proposta com escopo e prazo definidos. Aprovado, começamos. Você acompanha cada etapa até a entrega — sem precisar ficar perguntando o que está acontecendo."
+  },
+  {
+    question: "Fazem manutenção após a entrega?",
+    answer: "Sim. Oferecemos suporte pós-entrega para ajustes e correções. Manutenções contínuas podem ser contratadas à parte."
+  },
+  {
+    question: "Preciso ter domínio e hospedagem?",
+    answer: "Não necessariamente. Podemos indicar, contratar e configurar tudo para você — é parte do serviço."
+  },
+  {
+    question: "Quais tipos de cliente vocês atendem?",
+    answer: "Atendemos profissionais autônomos, pequenas e médias empresas que querem um site profissional, rápido e que gere resultado. Não atendemos e-commerce complexo ou sistemas internos."
+  },
+  {
+    question: "Posso parcelar o investimento?",
+    answer: "Trabalhamos com 50% na aprovação da proposta e 50% na entrega. Condições diferenciadas podem ser discutidas caso a caso."
+  }
+];
+
 export default function HomePage() {
   const whatsappNumber = "5581999062175";
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Oi! Quero solicitar um orçamento."
+    "Solicitar orçamento"
   )}`;
 
   return (
@@ -101,7 +158,7 @@ export default function HomePage() {
           Presença digital que transmite credibilidade
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-graySoft md:text-lg">
-          Desenvolvimento de sites que posicionam sua marca, atraem os clientes
+          Desenvolvemos sites que posicionam sua marca, atraem os clientes
           certos e crescem junto com o seu negócio.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
@@ -196,56 +253,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-base pb-20">
-        <div className="mb-6">
-          <p className="text-sm uppercase tracking-wide text-brand-graySoft">
-            Quem somos
-          </p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl">
-            Um estúdio independente onde seu projeto é tratado como único.
-          </h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-            <p className="text-brand-graySoft">
-              Somos o [NOME], um estúdio digital independente especializado em
-              desenvolvimento web e estratégia digital. Trabalhamos com poucos
-              projetos por vez — de propósito. Cada entrega recebe atenção
-              total, do primeiro briefing até o site no ar.
+      {/* Seção Sobre (Bloco 2) */}
+      <section className="container-base py-20">
+        <div className="grid gap-12 md:grid-cols-2">
+          <div>
+            <p className="text-sm uppercase tracking-wide text-brand-accent">
+              Quem somos
             </p>
-            <p className="mt-4 text-brand-graySoft">
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-brand-white md:text-4xl">
+              Um estúdio independente onde seu projeto é tratado como único.
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-brand-graySoft">
+              Somos um estúdio digital independente especializado em desenvolvimento
+              web e estratégia digital. Trabalhamos com poucos projetos por vez —
+              de propósito. Cada entrega recebe atenção total, do primeiro briefing
+              até o site no ar.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-brand-graySoft">
               Aqui não existe conta gerenciada por estagiário ou processo
               terceirizado. Você fala diretamente com quem pensa e executa cada
               detalhe do seu projeto.
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="flex flex-col gap-6">
             <article className="rounded-2xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-md">
               <ShieldCheck className="h-5 w-5 text-brand-accent" aria-hidden />
-              <h3 className="mt-4 text-lg font-semibold">
-                Autoria do começo ao fim
-              </h3>
-              <p className="mt-2 text-sm text-brand-graySoft">
+              <h3 className="mt-4 text-lg font-semibold text-brand-white">Autoria do começo ao fim</h3>
+              <p className="mt-2 text-sm leading-relaxed text-brand-graySoft">
                 Tudo é feito internamente, com responsabilidade total sobre cada
                 decisão de design, código e estratégia.
               </p>
             </article>
             <article className="rounded-2xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-md">
               <Target className="h-5 w-5 text-brand-accent" aria-hidden />
-              <h3 className="mt-4 text-lg font-semibold">
-                Agenda limitada, qualidade garantida
-              </h3>
-              <p className="mt-2 text-sm text-brand-graySoft">
+              <h3 className="mt-4 text-lg font-semibold text-brand-white">Agenda limitada, qualidade garantida</h3>
+              <p className="mt-2 text-sm leading-relaxed text-brand-graySoft">
                 Limitamos o número de projetos ativos para garantir dedicação
                 real — não produção em série.
               </p>
             </article>
             <article className="rounded-2xl border border-white/15 bg-white/[0.04] p-6 backdrop-blur-md">
               <Handshake className="h-5 w-5 text-brand-accent" aria-hidden />
-              <h3 className="mt-4 text-lg font-semibold">
-                Prazo é compromisso
-              </h3>
-              <p className="mt-2 text-sm text-brand-graySoft">
+              <h3 className="mt-4 text-lg font-semibold text-brand-white">Prazo é compromisso</h3>
+              <p className="mt-2 text-sm leading-relaxed text-brand-graySoft">
                 Definimos datas no início e cumprimos. Sem surpresas, sem
                 desculpas no meio do caminho.
               </p>
@@ -254,7 +304,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-base pb-20">
+      {/* Seção Depoimentos (Bloco 3) */}
+      <section className="bg-white/[0.02] py-20">
+        <div className="container-base">
+          <p className="text-center text-sm uppercase tracking-wide text-brand-accent">
+            Depoimentos
+          </p>
+          <h2 className="mt-4 text-center text-3xl font-semibold tracking-tight text-brand-white md:text-4xl">
+            O que dizem sobre o nosso trabalho
+          </h2>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {testimonials.map((t) => (
+              <article
+                key={t.name}
+                className="flex flex-col rounded-2xl border border-white/15 bg-white/[0.04] p-8 backdrop-blur-md"
+              >
+                <div className="mb-4 flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-brand-accent text-brand-accent" />
+                  ))}
+                </div>
+                <p className="flex-grow text-base leading-relaxed text-brand-graySoft italic">
+                  "{t.text}"
+                </p>
+                <div className="mt-8 flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-accent text-lg font-bold text-brand-black">
+                    {t.initials}
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-brand-white">{t.name}</h4>
+                    <p className="text-xs text-brand-graySoft">{t.role}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="container-base py-20">
         <div className="mb-6 flex items-center gap-2">
           <Code2 className="h-5 w-5 text-brand-accent" aria-hidden />
           <h2 className="text-2xl font-semibold">Portfólio</h2>
@@ -290,79 +378,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-base pb-20">
-        <div className="rounded-2xl border border-white/15 bg-white/[0.03] p-8 text-center backdrop-blur-md">
-          <p className="mx-auto max-w-2xl text-brand-graySoft">
-            Quer transformar seu site em um canal real de aquisição de clientes?
+      {/* Seção Stacks (Bloco 5) */}
+      <section className="container-base py-20 border-t border-white/10">
+        <div className="flex flex-col items-center text-center">
+          <Layers className="h-10 w-10 text-brand-accent" />
+          <h2 className="mt-6 text-3xl font-semibold text-brand-white">Stacks e tecnologias</h2>
+          <p className="mt-4 max-w-2xl text-brand-graySoft">
+            Utilizamos tecnologias modernas e consolidadas para garantir sites 
+            rápidos, seguros e preparados para crescer — sem depender de 
+            plataformas limitantes como Wix ou WordPress.
           </p>
-          <div className="mt-6 flex justify-center">
+        </div>
+      </section>
+
+      {/* Seção FAQ (Bloco 6) */}
+      <section className="container-base py-20 border-t border-white/10">
+        <p className="text-sm uppercase tracking-wide text-brand-accent">
+          Dúvidas frequentes
+        </p>
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight text-brand-white md:text-4xl">
+          Respondemos antes que você precise perguntar.
+        </h2>
+        <div className="mt-12 space-y-4">
+          {faq.map((item, i) => (
+            <details key={i} className="group rounded-2xl border border-white/15 bg-white/[0.03] p-6 backdrop-blur-md transition-all hover:bg-white/[0.06]">
+              <summary className="flex cursor-pointer list-none items-center justify-between text-lg font-semibold text-brand-white">
+                {item.question}
+                <span className="text-brand-accent transition-transform group-open:rotate-180">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </span>
+              </summary>
+              <p className="mt-4 text-base leading-relaxed text-brand-graySoft">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-base py-20">
+        <div className="rounded-2xl border border-white/15 bg-white/[0.03] p-12 text-center backdrop-blur-md">
+          <h2 className="text-3xl font-semibold text-brand-white">
+            Quer transformar seu site em um canal real de aquisição de clientes?
+          </h2>
+          <div className="mt-10 flex justify-center">
             <a
               href={whatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center rounded-full bg-brand-accent px-6 py-3 text-sm font-medium text-black transition hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+              className="inline-flex items-center rounded-full bg-brand-accent px-8 py-4 text-lg font-bold text-brand-black transition hover:scale-105 active:scale-95"
             >
               Solicitar orçamento
             </a>
           </div>
-        </div>
-      </section>
-
-      <section className="container-base pb-20">
-        <h2 className="text-2xl font-semibold md:text-3xl">FAQ</h2>
-        <div className="mt-6 space-y-3">
-          <details className="rounded-2xl border border-white/15 bg-white/[0.03] p-5 backdrop-blur-md">
-            <summary className="cursor-pointer list-none text-base font-semibold text-brand-white">
-              Quanto tempo leva para ficar pronto?
-            </summary>
-            <p className="mt-3 text-sm leading-relaxed text-brand-graySoft">
-              Landing pages ficam prontas em até 7 dias úteis. Sites
-              institucionais em até 15 dias úteis. O prazo começa a contar após
-              aprovação do briefing.
-            </p>
-          </details>
-
-          <details className="rounded-2xl border border-white/15 bg-white/[0.03] p-5 backdrop-blur-md">
-            <summary className="cursor-pointer list-none text-base font-semibold text-brand-white">
-              Como funciona o processo?
-            </summary>
-            <p className="mt-3 text-sm leading-relaxed text-brand-graySoft">
-              É simples: você me conta o que precisa, eu apresento uma proposta
-              com escopo e prazo definidos. Aprovado, a gente começa. Você
-              acompanha cada etapa até a entrega.
-            </p>
-          </details>
-
-          <details className="rounded-2xl border border-white/15 bg-white/[0.03] p-5 backdrop-blur-md">
-            <summary className="cursor-pointer list-none text-base font-semibold text-brand-white">
-              Vocês fazem manutenção após a entrega?
-            </summary>
-            <p className="mt-3 text-sm leading-relaxed text-brand-graySoft">
-              Sim. Oferecemos suporte pós-entrega para ajustes e correções.
-              Manutenções contínuas podem ser contratadas à parte.
-            </p>
-          </details>
-
-          <details className="rounded-2xl border border-white/15 bg-white/[0.03] p-5 backdrop-blur-md">
-            <summary className="cursor-pointer list-none text-base font-semibold text-brand-white">
-              Preciso ter o domínio e hospedagem?
-            </summary>
-            <p className="mt-3 text-sm leading-relaxed text-brand-graySoft">
-              Não necessariamente. Podemos indicar e configurar tudo para você —
-              é parte do serviço.
-            </p>
-          </details>
-
-          <details className="rounded-2xl border border-white/15 bg-white/[0.03] p-5 backdrop-blur-md">
-            <summary className="cursor-pointer list-none text-base font-semibold text-brand-white">
-              Trabalha com qual tipo de cliente?
-            </summary>
-            <p className="mt-3 text-sm leading-relaxed text-brand-graySoft">
-              Atendemos profissionais autônomos, pequenas e médias empresas que
-              querem um site profissional, rápido e que gere resultado. Não
-              atendemos projetos de e-commerce complexo ou sistemas internos.
-            </p>
-          </details>
         </div>
       </section>
     </>
