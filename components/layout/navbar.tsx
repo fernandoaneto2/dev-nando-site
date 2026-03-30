@@ -41,15 +41,15 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-brand-black/80 backdrop-blur-md border-b border-white/10"
+        scrolled || isOpen
+          ? "bg-brand-black/90 backdrop-blur-md border-b border-white/10"
           : "bg-transparent"
       }`}
     >
-      <div className="container-base flex h-20 items-center justify-between">
+      <div className="container-base flex h-20 items-center justify-between relative z-50">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-brand-white z-50"
+          className="text-xl font-bold tracking-tight text-brand-white"
           onClick={() => setIsOpen(false)}
         >
           Nexus Digital
@@ -83,19 +83,15 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="relative z-50 p-2 text-brand-white md:hidden focus:outline-none"
+          className="p-2 text-brand-white md:hidden focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
         >
           <div className="w-6 h-5 relative flex flex-col justify-between">
             <span
               className={`w-full h-0.5 bg-current transition-all duration-300 transform ${
-                isOpen ? "rotate-45 translate-y-2.25" : ""
+                isOpen ? "rotate-45 translate-y-[9px]" : ""
               }`}
-              style={{
-                transformOrigin: "center",
-                transform: isOpen ? "rotate(45deg) translateY(9px)" : "",
-              }}
             />
             <span
               className={`w-full h-0.5 bg-current transition-opacity duration-300 ${
@@ -104,44 +100,40 @@ export function Navbar() {
             />
             <span
               className={`w-full h-0.5 bg-current transition-all duration-300 transform ${
-                isOpen ? "-rotate-45 -translate-y-2.25" : ""
+                isOpen ? "-rotate-45 -translate-y-[9px]" : ""
               }`}
-              style={{
-                transformOrigin: "center",
-                transform: isOpen ? "rotate(-45deg) translateY(-9px)" : "",
-              }}
             />
           </div>
         </button>
+      </div>
 
-        {/* Mobile Navigation Overlay */}
-        <div
-          className={`fixed inset-0 z-40 bg-brand-black flex flex-col items-center justify-center transition-transform duration-500 ease-in-out md:hidden ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <nav className="flex flex-col items-center gap-8 text-2xl font-semibold">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-brand-graySoft hover:text-brand-white transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href={whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-flex items-center rounded-full bg-brand-accent px-8 py-4 text-lg font-bold text-brand-black hover:bg-brand-accent/90 transition-all"
+      {/* Mobile Navigation Overlay */}
+      <div
+        className={`fixed inset-0 z-40 bg-brand-black flex flex-col items-center justify-center transition-transform duration-500 ease-in-out md:hidden h-[100dvh] w-full ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <nav className="flex flex-col items-center gap-8 text-2xl font-semibold">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-brand-graySoft hover:text-brand-white transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              Orçamento
-            </a>
-          </nav>
-        </div>
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href={whatsappHref}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 inline-flex items-center rounded-full bg-brand-accent px-8 py-4 text-lg font-bold text-brand-black hover:bg-brand-accent/90 transition-all"
+            onClick={() => setIsOpen(false)}
+          >
+            Orçamento
+          </a>
+        </nav>
       </div>
     </header>
   );
