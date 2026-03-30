@@ -7,13 +7,21 @@ const technologies = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js
 const serviceHighlights = [
   {
     title: "Desenvolvimento Web",
-    description: "Sites institucionais, landing pages e portfolios criados para vender, escalar e posicionar sua marca.",
-    points: ["Experiencia premium e objetiva", "Codigo escalavel e seguro", "Foco total em conversao"]
+    description: "Crio sites institucionais, landing pages e portfólios feitos para vender com clareza.",
+    points: [
+      "Experiência fluida do primeiro scroll até o contato",
+      "Código limpo, rápido e preparado para crescer",
+      "Cada elemento pensado para converter visitante em cliente"
+    ]
   },
   {
-    title: "Assessoria Estrategica",
-    description: "Nao e so sobre desenvolver: e sobre tomar decisoes de negocio com base em dados e inovacao.",
-    points: ["Briefing com direcionamento real", "Plano de performance e SEO", "Estrategia data-driven para crescimento"]
+    title: "Assessoria Estratégica",
+    description: "Mais do que desenvolver: ajudo você a entender o que seu site precisa fazer para gerar resultado de verdade.",
+    points: [
+      "Briefing detalhado para alinhar expectativas desde o início",
+      "Plano de performance e SEO com metas claras",
+      "Estratégia baseada em dados reais do seu negócio"
+    ]
   }
 ];
 
@@ -21,46 +29,46 @@ const clientPains = [
   {
     title: "Site lento que espanta clientes",
     icon: Clock3,
-    text: "Cada segundo de demora derruba a confianca e reduz sua taxa de fechamento."
+    text: "Cada segundo a mais de carregamento afasta um cliente que estava pronto para contratar."
   },
   {
     title: "Identidade visual amadora",
     icon: Sparkles,
-    text: "Quando o visual nao transmite autoridade, sua marca perde valor antes da conversa com o cliente."
+    text: "Um visual amador faz o cliente questionar sua credibilidade antes mesmo de você dizer uma palavra."
   },
   {
-    title: "Falta de presenca no Google",
+    title: "Falta de presença no Google",
     icon: SearchX,
-    text: "Sem estrutura tecnica e SEO, seu negocio fica invisivel para quem esta pronto para comprar."
+    text: "Sem estrutura técnica e SEO, seu negócio fica invisível para quem já está pronto para comprar."
   },
   {
     title: "Processos manuais que tomam seu tempo",
     icon: AlertTriangle,
-    text: "Operacoes repetitivas consomem energia da equipe e travam o crescimento da empresa."
+    text: "Tarefas repetitivas consomem seu tempo e energia — que poderiam estar sendo usados para fechar novos projetos."
   }
 ];
 
 const portfolioProjects = [
   {
-    name: "Sistema de Gestao Social",
+    name: "Sistema de Gestão Social",
     stack: "Next.js",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
-    description: "Painel para centralizar indicadores, conteudo e atendimento em um fluxo unico."
+    description: "Painel para centralizar indicadores, conteúdo e atendimento em um fluxo único."
   },
   {
-    name: "Landing Page de Alta Conversao",
+    name: "Landing Page de Alta Conversão",
     stack: "AI",
     image:
       "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1400&q=80",
-    description: "Pagina comercial com copy orientada a acao e testes para elevar taxa de leads."
+    description: "Página comercial com copy orientada à ação e testes para elevar a taxa de leads."
   },
   {
-    name: "Calculadora de Producao Tecnica",
+    name: "Calculadora de Produção Técnica",
     stack: "Automation",
     image:
       "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1400&q=80",
-    description: "Ferramenta interativa para simular custos e reduzir erros em operacoes complexas."
+    description: "Ferramenta interativa para simular custos e reduzir erros em operações complexas."
   }
 ];
 
@@ -70,28 +78,27 @@ export default function HomePage() {
       <section className="container-base py-20 md:py-28">
         <p className="mb-4 inline-flex items-center gap-2 text-sm text-brand-graySoft">
           <Rocket className="h-4 w-4 text-brand-accent" aria-hidden />
-          Desenvolvedor Fullstack e Analista de Inovacao
+          Especialista em Sites que Vendem
         </p>
         <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-brand-white md:text-6xl">
-          Seu site precisa vender todos os dias, nao apenas existir online.
+          Seu site precisa trazer clientes todos os dias — não só ocupar espaço na internet.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-graySoft md:text-lg">
-          Transformo ideias em ecossistemas digitais de alta performance para gerar autoridade, demanda qualificada e
-          crescimento previsivel.
+          Desenvolvo sites que posicionam sua marca, atraem os clientes certos e crescem junto com o seu negócio.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <ButtonLink href="/contato">Iniciar projeto</ButtonLink>
           <ButtonLink href="/servicos" variant="ghost">
-            Ver servicos
+            Ver serviços
           </ButtonLink>
         </div>
       </section>
 
       <section className="border-y border-white/10 py-14">
         <div className="container-base">
-          <h2 className="text-2xl font-semibold md:text-3xl">Seu negocio sofre com isso?</h2>
+          <h2 className="text-2xl font-semibold md:text-3xl">Seu negócio sofre com isso?</h2>
           <p className="mt-3 max-w-3xl text-brand-graySoft">
-            Se alguma dessas dores parece familiar, seu site atual provavelmente esta custando dinheiro todos os meses.
+            Se você se identificou com algum desses pontos, seu site provavelmente está custando clientes todo mês.
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {clientPains.map((pain) => (
@@ -124,7 +131,7 @@ export default function HomePage() {
       <section className="container-base py-16">
         <div className="mb-8 flex items-center gap-2">
           <Code2 className="h-5 w-5 text-brand-accent" aria-hidden />
-          <h2 className="text-2xl font-semibold">Resumo de servicos</h2>
+          <h2 className="text-2xl font-semibold">Resumo de Serviços</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2">
           {serviceHighlights.map((item) => (
@@ -140,12 +147,12 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold">Sobre e expertise</h2>
           </div>
           <p className="max-w-3xl text-brand-graySoft">
-            Minha expertise conecta engenharia de software com analise de inovacao para construir sites que nao so
-            funcionam bem, mas que tambem geram impacto real para marcas e negocios.
+            Combino desenvolvimento técnico com visão estratégica para entregar sites que funcionam bem e, principalmente,
+            geram resultado real para quem contrata.
           </p>
           <p className="mt-4 max-w-3xl text-brand-graySoft">
-            Trabalho com desenvolvimento orientado a dados: cada decisao de UX, performance e conteudo e guiada por
-            metricas de comportamento para aumentar conversao com consistencia.
+            Cada decisão de layout, conteúdo e performance é baseada em como o usuário realmente se comporta — não em
+            achismo.
           </p>
           <div className="mt-6">
             <ButtonLink href="/contato" variant="ghost">
@@ -159,10 +166,10 @@ export default function HomePage() {
         <div className="container-base">
           <div className="mb-4 flex items-center gap-2">
             <Globe className="h-5 w-5 text-brand-accent" aria-hidden />
-            <h2 className="text-2xl font-semibold">Contato rapido</h2>
+            <h2 className="text-2xl font-semibold">Contato rápido</h2>
           </div>
           <p className="max-w-2xl text-brand-graySoft">
-            Para alinhar escopo, prazo e objetivos do seu projeto, acesse a pagina de contato e envie sua mensagem.
+            Para alinhar escopo, prazo e objetivos do seu projeto, acesse a página de contato e envie sua mensagem.
           </p>
           <div className="mt-6">
             <ButtonLink href="/contato">Ir para contato</ButtonLink>
@@ -173,10 +180,10 @@ export default function HomePage() {
       <section className="container-base pb-20">
         <div className="mb-6 flex items-center gap-2">
           <Code2 className="h-5 w-5 text-brand-accent" aria-hidden />
-          <h2 className="text-2xl font-semibold">Portfolio</h2>
+          <h2 className="text-2xl font-semibold">Portfólio</h2>
         </div>
         <p className="max-w-2xl text-brand-graySoft">
-          Projetos pensados para transformar operacao, acelerar resultados e posicionar marcas de forma profissional.
+          Projetos pensados para transformar operações, acelerar resultados e posicionar sua marca com profissionalismo.
         </p>
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {portfolioProjects.map((project) => (

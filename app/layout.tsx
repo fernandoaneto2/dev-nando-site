@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { WhatsAppFinalCTA } from "@/components/layout/whatsapp-final-cta";
+import { WhatsAppFloating } from "@/components/layout/whatsapp-floating";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,15 +14,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "devn.ando | Desenvolvedor Fullstack e Analista de Inovacao",
+  title: "devn.ando | Especialista em Sites que Vendem",
   description:
-    "Transformo ideias em produtos digitais de alta performance com desenvolvimento web e estrategia para sites.",
+    "Desenvolvo sites que posicionam sua marca, atraem os clientes certos e geram resultados.",
   keywords: [
-    "desenvolvedor fullstack",
-    "analista de inovacao",
-    "sites institucionais",
+    "sites que vendem",
+    "desenvolvimento web",
     "landing pages",
-    "portfolio profissional"
+    "portfólio profissional",
+    "SEO"
   ]
 };
 
@@ -30,6 +32,8 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body className="font-sans">
         <Navbar />
         <main>{children}</main>
+        <WhatsAppFinalCTA />
+        <WhatsAppFloating />
         <Footer />
       </body>
     </html>

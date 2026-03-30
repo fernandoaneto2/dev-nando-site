@@ -10,10 +10,10 @@ export default function ContatoPage() {
     <section className="container-base py-20 md:py-24">
       <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Contato</h1>
       <p className="mt-4 max-w-2xl text-brand-graySoft">
-        Conte sua ideia e vamos estruturar um site moderno, escalavel e focado em conversao.
+        Conte sua ideia e vamos estruturar um site moderno, escalável e focado em conversão.
       </p>
 
-      <form className="mt-10 max-w-2xl space-y-5 rounded-2xl border border-white/10 p-6" aria-label="Formulario de contato">
+      <form className="mt-10 max-w-2xl space-y-5 rounded-2xl border border-white/10 p-6" aria-label="Formulário de contato">
         <label className="block text-sm text-brand-graySoft">
           <span className="mb-2 inline-flex items-center gap-2">
             <User className="h-4 w-4 text-brand-accent" aria-hidden />
@@ -37,7 +37,7 @@ export default function ContatoPage() {
             type="email"
             name="email"
             className="w-full rounded-lg border border-white/15 bg-transparent px-4 py-3 text-brand-white outline-none transition focus:border-brand-accent"
-            placeholder="voce@empresa.com"
+            placeholder="você@empresa.com"
             required
           />
         </label>

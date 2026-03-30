@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/servicos", label: "Servicos" },
+  { href: "/servicos", label: "Serviços" },
   { href: "/contato", label: "Contato" }
 ];
 
@@ -13,7 +13,7 @@ export function Navbar() {
         <Link href="/" className="text-sm font-semibold tracking-wide text-brand-white">
           devn.ando
         </Link>
-        <nav aria-label="Navegacao principal">
+        <nav aria-label="Navegação principal">
           <ul className="flex items-center gap-6 text-sm text-brand-graySoft">
             {navLinks.map((link) => (
               <li key={link.href}>
