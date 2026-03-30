@@ -1,10 +1,10 @@
 import { MessageCircle } from "lucide-react";
 
-const whatsappNumber = "5583998661293";
+const whatsappNumber = "5581999062175";
 
 export function WhatsAppFloating() {
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Oi, Fernando! Quero falar sobre meu site/projeto."
+    "Oi! Quero falar sobre meu site/projeto."
   )}`;
 
   return (
@@ -19,4 +19,3 @@ export function WhatsAppFloating() {
     </a>
   );
 }
-

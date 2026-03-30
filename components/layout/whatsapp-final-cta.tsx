@@ -1,9 +1,9 @@
 import { Mail, MessageCircle } from "lucide-react";
 
 export function WhatsAppFinalCTA() {
-  const whatsappNumber = "5583998661293";
+  const whatsappNumber = "5581999062175";
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Oi, Fernando! Quero tirar minhas dúvidas e começar meu projeto."
+    "Oi! Quero tirar minhas dúvidas e começar meu projeto."
   )}`;
   const email = "fernando.neto02@gmail.com";
 
@@ -13,9 +13,12 @@ export function WhatsAppFinalCTA() {
         <div className="rounded-2xl border border-white/15 bg-white/[0.03] p-8 backdrop-blur-md">
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div className="max-w-2xl">
-              <h2 className="text-2xl font-semibold md:text-3xl">Vamos conversar agora?</h2>
+              <h2 className="text-2xl font-semibold md:text-3xl">
+                Vamos conversar agora?
+              </h2>
               <p className="mt-2 text-brand-graySoft">
-                Me chama no WhatsApp e eu te respondo com próximos passos claros. Se preferir, envie um e-mail.
+                Me chama no WhatsApp e eu te respondo com próximos passos
+                claros. Se preferir, envie um e-mail.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -42,4 +45,3 @@ export function WhatsAppFinalCTA() {
     </section>
   );
 }
-
