@@ -10,14 +10,14 @@ const navLinks = [
 export function Footer() {
   const whatsappNumber = "5581999062175";
   const whatsappHref = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    "Solicitar orçamento"
+    "Solicitar orçamento",
   )}`;
   const email = "fernando.neto02@gmail.com";
   const linkedinHref = "https://www.linkedin.com/in/fernando-amorim-33860624a/";
   const instagramHref = "https://instagram.com/devn.ando";
 
   return (
-    <footer className="border-t border-white/10 py-16">
+    <footer className="relative z-10 border-t border-white/10 py-16">
       <div className="container-base space-y-12 text-sm text-brand-graySoft">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <p className="max-w-xl text-lg text-brand-white leading-relaxed">
@@ -41,9 +41,12 @@ export function Footer() {
             <p className="mb-4 text-xs uppercase tracking-widest text-brand-accent font-bold">
               Marca
             </p>
-            <p className="text-xl font-bold text-brand-white tracking-tight">Nexus Digital</p>
+            <p className="text-xl font-bold text-brand-white tracking-tight">
+              Nexus Digital
+            </p>
             <p className="mt-4 text-brand-graySoft leading-relaxed">
-              Estúdio digital independente especializado em sites que geram resultado.
+              Estúdio digital independente especializado em sites que geram
+              resultado.
             </p>
           </div>
 
@@ -122,7 +125,8 @@ export function Footer() {
 
         <div className="flex flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
           <p className="text-xs">
-            © {new Date().getFullYear()} Nexus Digital. Todos os direitos reservados.
+            © {new Date().getFullYear()} Nexus Digital. Todos os direitos
+            reservados.
           </p>
           <div className="flex items-center gap-6">
             <a

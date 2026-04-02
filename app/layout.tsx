@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import AnimatedBackground from "@/components/AnimatedBackground";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,8 +31,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={inter.variable}>
       <body className="font-sans">
+        <AnimatedBackground />
         <Navbar />
-        <main className="pt-20">{children}</main>
+        <main className="relative z-10 pt-20">{children}</main>
         <Footer />
       </body>
     </html>
